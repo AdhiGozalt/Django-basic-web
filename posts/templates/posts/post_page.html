@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+{{ post.title }} 
+{% endblock %}
+
+{% block content %}
+    <section>
+        <h1> {{ post.title }} </h1>
+        <p>{{ post.date|timesince  }} ago</p>
+        <p>{{ post.body|linebreaks|urlize }}</p>   
+        <p><b> Word Count: {{ post.body|wordcount}}</b></p>
+    </section> 
+{% endblock  %}
+# Gue pake template buat ngerapiin article seperti timesince,linebreaks dll
+#ttps://dev.to/vijaysoni007/my-favorite-django-template-filters-2nen
