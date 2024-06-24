@@ -11,11 +11,13 @@
     {% for post in posts %}
         <article class="post">
             <h2>{{ post.title }} </h2>
-            <p>{{ post.date }}</p>
-            <p>{{ post.body }}</p>
+            <p>{{ post.date|timesince  }} ago</p>
+            <p>{{ post.body|linebreaks|urlize }}</p>   
+            <p><b> Word Count: {{ post.body|wordcount}}</b></p>
         </article>
     {% endfor %}
 
 </section> 
 {% endblock  %}
-
+# Gue pake template buat ngerapiin article seperti timesince,linebreaks dll
+#ttps://dev.to/vijaysoni007/my-favorite-django-template-filters-2nen
